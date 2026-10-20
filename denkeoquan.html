@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đèn kéo quân</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #eaf7ff;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #075985;
+        }
+
+        .stage {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+        }
+
+        .den {
+            width: 180px;
+            height: 240px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: quay 12s linear infinite;
+        }
+
+        .stage:hover .den {
+            animation-play-state: paused;
+        }
+
+        .mat {
+            position: absolute;
+            width: 180px;
+            height: 240px;
+            left: 0;
+            top: 0;
+            border: 3px solid orange;
+            border-radius: 10px;
+            overflow: hidden;
+            backface-visibility: visible;
+            background: white;
+        }
+
+        .mat img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mat:nth-child(1) {
+            transform: rotateY(0deg) translateZ(180px);
+        }
+
+        .mat:nth-child(2) {
+            transform: rotateY(60deg) translateZ(180px);
+        }
+
+        .mat:nth-child(3) {
+            transform: rotateY(120deg) translateZ(180px);
+        }
+
+        .mat:nth-child(4) {
+            transform: rotateY(180deg) translateZ(180px);
+        }
+
+        .mat:nth-child(5) {
+            transform: rotateY(240deg) translateZ(180px);
+        }
+
+        .mat:nth-child(6) {
+            transform: rotateY(300deg) translateZ(180px);
+        }
+
+        @keyframes quay {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #087e8b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ĐÈN KÉO QUÂN 6 MẶT</h1>
+
+    <p>Họ tên: [BÀNH KIẾN QUỐC]</p>
+    <p>MSSV: [241A010260]</p>
+
+    <div class="stage">
+        <div class="den">
+            <div class="mat">
+                <img src="images/anh1.jpg" alt="Ảnh 1">
+            </div>
+
+            <div class="mat">
+                <img src="images/anh2.jpg" alt="Ảnh 2">
+            </div>
+
+            <div class="mat">
+                <img src="images/anh3.jpg" alt="Ảnh 3">
+            </div>
+
+            <div class="mat">
+                <img src="images/anh4.jpg" alt="Ảnh 4">
+            </div>
+
+            <div class="mat">
+                <img src="images/anh5.jpg" alt="Ảnh 5">
+            </div>
+
+            <div class="mat">
+                <img src="images/anh6.jpg" alt="Ảnh 6">
+            </div>
+        </div>
+    </div>
+
+    <p>Đưa chuột vào đèn để dừng, rê chuột ra để quay tiếp.</p>
+
+    <a class="back" href="index.html">Quay về trang chủ</a>
+</body>
+</html>
